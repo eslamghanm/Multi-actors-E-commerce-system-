@@ -1,0 +1,19 @@
+.errorpage{
+    width: 100%;
+    height: 100vh !important;
+    background-image: url(/assets/images/error/error2.png) !important;
+    background-size: cover;
+    background-position: center center;
+}
+.error-code{
+    font-size: .8rem;
+    color: #c3c3c3;
+}
+.errorpage h1{
+    font-size: 4rem;
+}
+.error-disc{
+    font-weight: 400;
+    letter-spacing: .1rem;
+    
+}

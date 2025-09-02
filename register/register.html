@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- css link  -->
+         <link rel="stylesheet" href="/shared/css/common.css" />
+    <link rel="stylesheet" href="./css/register.css" />
+</head>
+<body>
+    <div class="navbar-container"></div>
+    <div class="container-fluid logIn overflow-hidden py-5 py-lg-3">
+    <div class="row ">
+        <div class="col-lg-4 offset-1 text-center d-none d-lg-block">
+             <img
+             class="img-fluid"
+            src="../assets/images/login/log2.avif"
+            alt=""
+          />
+        </div>
+        <div class="col-lg-5 offset-1 d-flex flex-column align-items-start justify-content-center gap-2">
+            <h1>Create an account</h1>
+            <small class="fs-6">Enter your details below</small>
+<form id="registerForm" class="needs-validation  w-75" novalidate action="./index.html">
+    <div id="ErrorMsg" class="alert alert-danger d-none alert-dismissible fade show" role="alert">
+        <strong>Error : </strong>You must fill these inputs.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div id="emailEx" class="alert alert-warning d-none alert-dismissible fade show" role="alert">
+        <i class="fa-solid fa-triangle-exclamation text-warning fs-3 pe-2"></i> user already exists
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <div class="form-group">
+
+        <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 mt-3" id="register-name"  required placeholder="Enter Your Name">
+        <div class="valid-feedback">
+        </div>
+        <div class="invalid-feedback">
+            Please provide a valid name first char is uppercase and contain from 3 to 6 char.
+        </div>
+    </div>
+    <div class="form-group">
+        
+        <input type="email" class="form-control border-0 border-bottom border-2 rounded-0 mt-3" id="register-email"  required placeholder="Enter Your Email">
+        <div class="valid-feedback">
+        </div>
+        <div class="invalid-feedback">
+            Please provide a valid email contain letter , numbers , @ , .co .
+        </div>
+    </div>
+<div class="form-group">
+        
+    <input type="password" class="form-control border-0 border-bottom border-2  rounded-0 my-3" id="register-password" required placeholder="Enter your Password">
+    <div class="valid-feedback">
+    </div>
+    <div class="invalid-feedback">
+        Please provide a valid password contain from 5 to 10 degit.
+    </div>
+</div>
+<div class="form-group">
+        
+    <input type="password" class="form-control border-0 border-bottom border-2  rounded-0 my-3" id="register-confirm" required placeholder="Confirm Password">
+    <div class="valid-feedback"></div>
+    <div class="invalid-feedback">
+        The confeirm password is not matching .
+    </div>
+</div>
+   
+
+    <div class="form-group">    
+ <select  id="role" class="form-select mb-3 border-0 border-bottom border-2  rounded-0" style="box-shadow: none;outline: none;">
+    <option selected>Select role</option>
+    <option value="customer">Customer</option>
+    <option value="seller">Seller</option>
+    </select>
+    <div class="valid-feedback"></div>
+    <div class="invalid-feedback">
+        The role must be selected.
+    </div>
+</div>
+    <div class="form-group">
+        
+        <input type="text" class="form-control d-none border-0 border-bottom border-2  rounded-0 my-3" id="customer-address" required placeholder="Enter Customer Address">
+        <div class="valid-feedback">
+        </div>
+        <div class="invalid-feedback">
+            Enter the real address at less 5 letter , _ , numbers.
+        </div>
+    </div>
+    
+    <div>
+        <button type="submit" class="btn btn-danger w-100 py-2 mb-3">Register</button>
+        <p class="text-center">I alredy have account ? <a href="/login/login.html" class="text-danger text-decoration-underline">LogIn</a></p>
+    </div>
+    </form>
+        </div>
+    </div>
+    </div>
+    <!-- footer -->
+    <!-- <div class="footer-container"></div> -->
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/shared/js/utils.js"></script>
+    <script src="./js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 10px;
+            color: #222;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .login-container h1 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .login-container p {
+            color: #4a5568;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a5568;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-login {
+            background-color: #4299e1;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background-color: #3182ce;
+            transform: translateY(-2px);
+        }
+
+        .sample-users {
+            margin-top: 25px;
+            text-align: left;
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #4299e1;
+        }
+
+        .sample-users p {
+            margin-bottom: 10px;
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .sample-users ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .sample-users li {
+            color: #4a5568;
+            font-size: 13px;
+            padding: 3px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .sample-users li:before {
+            content: "•";
+            color: #4299e1;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container" id="loginContainer">
+        <h1>Test Login</h1>
+        <h2>Admins & Sellers<br>& Customer</h2>
+        <p>Enter your user ID to login to the system</p>
+
+        <form onsubmit="event.preventDefault()">
+            <div class="input-group">
+                <label for="userIdInput">User ID</label>
+                <input type="number" id="userIdInput" placeholder="Enter your user ID">
+            </div>
+
+            <input type="submit" value="Login" class="btn btn-login"
+                onclick="loginAs(document.getElementById('userIdInput').value)">
+        </form>
+
+        <div class="sample-users" id="sampleUsers">
+            <p>Available Ranges:</p>
+            <ul id="usersList"></ul>
+        </div>
+    </div>
+
+    <script>
+        function loginAs(userId) {
+            const usersData = JSON.parse(localStorage.getItem('users')) || {};
+            let userToLogin = null;
+
+            for (const role in usersData) {
+                if (usersData[role][userId]) {
+                    userToLogin = usersData[role][userId];
+                    break;
+                }
+            }
+
+            if (userToLogin) {
+                localStorage.setItem('userData', JSON.stringify(userToLogin));
+                switch (userToLogin.role) {
+                    case 'superadmin':
+                    case 'admin':
+                    case 'seller':
+                        window.location.href = "dashboard.html";
+                        break;
+                    case 'customer':
+                        window.location.href = "/index.html";
+                        break;
+                    default:
+                        window.location.href = "dashboard.html";
+                }
+            } else {
+                alert("User not found! Please check the user ID.");
+            }
+        }
+
+        function renderSampleUsers() {
+            const usersData = JSON.parse(localStorage.getItem('users')) || {};
+            const usersList = document.getElementById("usersList");
+
+            usersList.innerHTML = "";
+
+            for (const role in usersData) {
+                const roleUsers = Object.keys(usersData[role]).map(id => parseInt(id)).sort((a, b) => a - b);
+                if (roleUsers.length > 0) {
+                    let minId = roleUsers[0];
+                    let maxId = roleUsers[roleUsers.length - 1];
+                    let roleLabel = role.charAt(0).toUpperCase() + role.slice(1);
+                    let li = document.createElement("li");
+
+                    if (minId === maxId) {
+                        li.innerHTML = `<strong>${roleLabel}</strong>: ID ${minId}`;
+                    } else {
+                        li.innerHTML = `<strong>${roleLabel}</strong>: IDs ${minId} - ${maxId}`;
+                    }
+
+                    usersList.appendChild(li);
+                }
+            }
+        }
+
+        renderSampleUsers();
+    </script>
+</body>
+
+</html>

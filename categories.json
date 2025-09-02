@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Smartphones",
+    "icon": "fas fa-mobile-alt"
+  },
+  {
+    "name": "Laptops",
+    "icon": "fas fa-laptop"
+  },
+  {
+    "name": "Cameras",
+    "icon": "fas fa-camera"
+  },
+  {
+    "name": "Headphones",
+    "icon": "fas fa-headphones"
+  },
+  {
+    "name": "Televisions",
+    "icon": "fas fa-tv"
+  },
+  {
+    "name": "Smart Watches",
+    "icon": "fas fa-clock"
+  },
+  {
+    "name": "Gaming Consoles",
+    "icon": "fas fa-gamepad"
+  },
+  {
+    "name": "Speakers",
+    "icon": "fas fa-volume-up"
+  },
+  {
+    "name": "Tablets",
+    "icon": "fas fa-tablet-alt"
+  },
+  {
+    "name": "Printers",
+    "icon": "fas fa-print"
+  }
+]

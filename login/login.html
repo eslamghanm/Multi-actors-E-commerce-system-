@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- font family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+  <!-- SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- css link  -->
+  <link rel="stylesheet" href="/shared/css/common.css" />
+  <link rel="stylesheet" href="./css/login.css" />
+</head>
+
+<body class="vh-100 overflow-hidden">
+  <div class="navbar-container"></div>
+  <div class="container-fluid overflow-hidden logIn py-5 py-lg-3">
+    <div class="row">
+      <div class="col-lg-4 offset-1 text-center d-none d-lg-block">
+        <img class="img-fluid" src="../assets/images/login/log2.avif" alt="" />
+      </div>
+      <div class="col-lg-5 offset-1 d-flex flex-column align-items-start justify-content-center gap-2">
+        <h1>Log in to </h1>
+        <small class="fs-6">Enter your details below</small>
+        <form id="loginForm" class="needs-validation w-75" novalidate action="/index.html">
+          <div id="ErrorMsg" class="alert alert-danger d-none alert-dismissible fade show" role="alert">
+            <strong>Error : </strong>Your Email is not founded.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control border-0 border-bottom border-2 rounded-0 mt-3" id="loginEmail"
+              required placeholder="Enter Your Email" />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please provide a valid email.</div>
+          </div>
+
+          <div class="form-group">
+
+            <input type="password" class="form-control border-0 border-bottom border-2 rounded-0 my-3"
+              id="loginPassword" required placeholder="Enter your Password" />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please provide a valid password.</div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between">
+            <button type="submit" class="btn btn-danger text-white px-4 py-2">Login</button>
+            <a href="/register/register.html" class="text-danger text-decoration-underline">Don't have account ?
+            </a>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <!-- <div class="footer-container"></div> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/shared/js/utils.js"></script>
+  <script src="./js/login.js"></script>
+</body>
+
+</html>

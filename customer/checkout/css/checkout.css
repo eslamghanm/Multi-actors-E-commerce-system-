@@ -1,0 +1,40 @@
+/* Simple focus style */
+:root{
+  --dander:#db4444;
+}
+.focus-ring:focus {
+  outline: 2px solid #db4444;
+  outline-offset: 2px;
+}
+
+/* Error message styling */
+.error-message {
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+/* Show error message */
+.error-message.d-none {
+  display: none;
+}
+
+/* Show error message */
+.error-message:not(.d-none) {
+  display: block;
+}
+
+/* Red border on invalid input */
+.is-invalid {
+  border-color: var(--danger) !important;
+}
+
+/* Scroll for cart items if too long */
+#cartItems {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Cursor pointer for radio labels */
+form label {
+  cursor: pointer;
+}

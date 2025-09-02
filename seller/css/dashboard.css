@@ -1,0 +1,217 @@
+/* ============= Statistics Cards ============= */
+.stats-row {
+    margin-bottom: 1rem;
+}
+
+.stat-box .card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    max-height: 150px;
+}
+
+.stat-box .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stat-box .blue-gradient {
+    background: linear-gradient(135deg, #0d6efd 0%, #6c8efd 100%);
+    color: white;
+}
+
+.stat-box .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: transparent !important;
+}
+
+.stat-box .card-header i {
+    font-size: 1.25rem;
+    opacity: 0.8;
+}
+
+.blue-gradient .card-header i {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.stat-box .badge {
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 0.35rem 0.5rem;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+}
+
+.stat-box .card-body {
+    padding: 1.25rem;
+    position: relative;
+}
+
+#statsRow>div .stat-box .card-body::before {
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 58px;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+#statsRow>div:nth-child(1) .stat-box .card-body::before {
+    content: "\f201";
+}
+
+#statsRow>div:nth-child(2) .stat-box .card-body::before {
+    content: "\f07a";
+}
+
+#statsRow>div:nth-child(3) .stat-box .card-body::before {
+    content: "\f468";
+}
+
+#statsRow>div:nth-child(4) .stat-box .card-body::before {
+    content: "\e561";
+}
+
+#statsRow>div:nth-child(5) .stat-box .card-body::before {
+    content: "\f0c0";
+}
+
+#statsRow>div:nth-child(6) .stat-box .card-body::before {
+    content: "\f155";
+}
+
+#statsRow>div:nth-child(7) .stat-box .card-body::before {
+    content: "\f155";
+}
+
+#statsRow>div:nth-child(8) .stat-box .card-body::before {
+    content: "\f155";
+}
+
+#statsRow>div:nth-child(9) .stat-box .card-body::before {
+    content: "\f543";
+}
+
+#statsRow>div:nth-child(10) .stat-box .card-body::before {
+    content: "\f494";
+}
+
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+    position: relative;
+    z-index: 3;
+}
+
+.blue-gradient .stat-value {
+    color: white;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 3;
+}
+
+.blue-gradient .stat-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============= Charts ============= */
+.chart-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.chart-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.chart-card .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #495057;
+}
+
+.chart-card .chart-period {
+    width: 120px;
+}
+
+.chart-card .form-select-sm {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    border-color: #e9ecef;
+}
+
+.chart-card .card-body {
+    padding: 1rem;
+    position: relative;
+}
+
+canvas {
+    min-height: 350px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chart-card .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .chart-card .chart-period {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-row .stat-box {
+        max-height: 150px;
+    }
+
+    .stat-box .card-header {
+        display: none;
+    }
+
+    .stat-box .card-body {
+        padding: 1rem;
+    }
+
+    #categoryChart {
+        height: 350px !important;
+    }
+}

@@ -1,0 +1,274 @@
+/* home */
+.carousel-dark .carousel-indicators [data-bs-target] {
+  border: 2px solid white;
+}
+.carousel-caption {
+  transform: translateX(-10%);
+}
+.caption {
+  font-size: 2.7rem;
+  font-weight: 400;
+}
+@media all and (max-width: 992px) {
+  #carousel-container {
+    width: 100% !important;
+    background-color: aqua;
+  }
+  .sidebar-sm {
+    display: none;
+  }
+}
+.home img {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* -------------------------------------------------------- */
+
+.today span {
+  position: relative;
+}
+.today span::after {
+  content: "";
+  width: 1.1rem;
+  height: 2rem;
+  position: absolute;
+  background-color: var(--danger-color);
+  border-radius: 3px;
+  top: 0%;
+  left: 0%;
+  transform: translate(-150%, -20%);
+}
+/* -------------------------------------------------------- */
+#swiperCardsBtn i {
+  background-color: var(--text-color);
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#swiperCardsBtn i:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* ---------------------------------------------------------- */
+.price {
+  font-size: 0.9rem;
+}
+.price .oldPrice {
+  color: var(--text-color);
+}
+.star-rating {
+  cursor: pointer;
+}
+.star-rating i {
+  color: var(--text-color);
+  cursor: pointer;
+}
+.star-rating i.active {
+  color: gold !important;
+}
+.rateValue {
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+.love:hover {
+  color: var(--danger-color) !important;
+  cursor: pointer;
+}
+.cartBtn div {
+  cursor: pointer;
+  transition: all 1s !important;
+}
+.cartBtn:hover div {
+  transform: translateY(-100%) !important;
+}
+
+.cartBtn img {
+  transition: all 1s;
+}
+.cartBtn:hover img {
+  transform: scale(1.1);
+}
+.cartBtn img {
+  height: 14rem !important;
+  padding: 1rem;
+}
+
+@media all and (max-width: 992px) {
+  .swiper-slide {
+    width: 49%;
+  }
+}
+
+/* --------------------------------------------------------- */
+/* category */
+
+.catCard,
+.buy-timmer {
+  transition: background 0.5s, transform 1s;
+  height: 100% !important;
+  padding: 10px;
+}
+.catCard a {
+  text-decoration: none !important;
+  color: var(--danger-color);
+}
+.catCard:hover {
+  cursor: pointer;
+  background-color: var(--danger-color) !important;
+  color: white;
+  transform: scale(1.1, 1.1);
+}
+.catCard:hover a {
+  color: white;
+}
+/* ------------------------------------------------- */
+#buyNow {
+  background-image: url(assets/images/home/boombox/bg2.png);
+  background-size: cover;
+  height: 60vh;
+  background-position: 50% 50%;
+}
+.buy-title {
+  color: var(--success-color);
+  font-weight: 300;
+}
+.buy-dis {
+  font-weight: 800;
+}
+.buy-timmer {
+  font-size: 0.8rem !important;
+  font-weight: 400 !important;
+  width: 4.1rem !important;
+  height: 4.1rem !important;
+  padding: 3px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.buy-btn:hover {
+  background-color: var(--success-color) !important;
+}
+.buy-btn {
+  background-color: var(--success-color) !important;
+  animation: buy 0.6s ease-in-out infinite both alternate;
+}
+@keyframes buy {
+  0% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+.buy-timmer:hover {
+  cursor: pointer;
+  background-color: var(--success-color) !important;
+  color: white;
+  transform: scale(1.1, 1.1);
+}
+/* ----------------------------------------------------------- */
+#Featured img {
+  width: 100% !important;
+}
+#Featured p {
+  font-size: 0.8rem !important;
+}
+#Featured a {
+  font-size: 0.8rem !important;
+  font-weight: 500;
+}
+.caption3 {
+  padding: 10px !important;
+}
+.caption3 h4 {
+  font-size: 0.7rem !important;
+  font-weight: 800;
+}
+.caption3 p {
+  font-size: 0.2rem !important;
+  width: 80% !important;
+}
+
+#Featured a {
+  padding: 0 !important;
+}
+.f-icon {
+  border: solid 0.8rem var(--text-color) !important;
+}
+/* ----------------------- */
+.products img {
+  width: 50%;
+  height: 10em;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1em auto;
+
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+.products .card img:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.products .card {
+  transition: transform 0.2s ease;
+}
+.products .card:hover {
+  transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -o-transform: translateY(3px);
+}
+.products .card h5 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.active {
+  background-color: #dc3545;
+  color: white;
+}
+.text-danger {
+  color: #dc3545 !important;
+}
+@media (max-width: 768px) {
+  .arrows {
+    display: none !important;
+  }
+}
+/* Card hover shadow */
+.cart {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image hover zoom */
+.transition-img {
+  transition: transform 0.4s ease;
+}
+.transition-img:hover {
+  transform: scale(1.1);
+}
+
+/* Like button */
+.like-btn {
+  font-size: 1.5rem;
+  color: #bbb;
+  background: transparent;
+  border: none;
+  transition: color 0.3s ease;
+}
+.like-btn.active i {
+  color: red;
+  font-weight: 900;
+}

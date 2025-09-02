@@ -1,0 +1,417 @@
+<div class="container-fluid py-4">
+    <div id="alertContainer" class="position-fixed top-20 end-0 p-3" style="z-index: 999999999;"></div>
+
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-end align-items-center">
+                <button class="btn btn-primary" id="addAdminBtn">
+                    <i class="fa-solid fa-plus me-2"></i>Add New Admin
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row g-4 mb-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-card-body">
+                    <div class="stat-icon bg-primary">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="totalAdminsCount">0</h3>
+                        <p class="stat-label">Total Admins</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-card-body">
+                    <div class="stat-icon bg-success">
+                        <i class="fa-solid fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="activeAdminsCount">0</h3>
+                        <p class="stat-label">Active Admins</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-card-body">
+                    <div class="stat-icon bg-warning">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="superAdminsCount">0</h3>
+                        <p class="stat-label">Super Admins</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-card-body">
+                    <div class="stat-icon bg-info">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="recentLoginsCount">0</h3>
+                        <p class="stat-label">Recent Logins</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Settings -->
+    <div class="row mb-4 d-none">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">System Settings</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h6 class="setting-title">User Registration</h6>
+                                    <p class="setting-description">Allow new users to register accounts</p>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="allowRegistration" checked>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h6 class="setting-title">Email Notifications</h6>
+                                    <p class="setting-description">Send email notifications to users</p>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h6 class="setting-title">Maintenance Mode</h6>
+                                    <p class="setting-description">Put the system in maintenance mode</p>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="maintenanceMode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h6 class="setting-title">Auto Backup</h6>
+                                    <p class="setting-description">Automatically backup system data</p>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="autoBackup" checked>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-primary" id="saveSettingsBtn">
+                            <i class="fa-solid fa-save me-2"></i>Save Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters and Search -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-4 d-none">
+                            <label class="form-label">Search Admins</label>
+                            <div class="input-group d-none">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-search"></i>
+                                </span>
+                                <input type="text" class="form-control" id="searchInput" placeholder="Search by name or email...">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2 d-none">
+                            <label class="form-label">Status</label>
+                            <select class="form-select" id="statusFilter">
+                                <option value="">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="suspended">Suspended</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <label class="form-label">Type</label>
+                            <select class="form-select" id="typeFilter">
+                                <option value="">All Types</option>
+                                <option value="super">Super Admin</option>
+                                <option value="regular">Regular Admin</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <label class="form-label">Sort By</label>
+                            <select class="form-select" id="sortBy">
+                                <option value="name">Name</option>
+                                <option value="email">Email</option>
+                                <option value="createdAt">Created Date</option>
+                                <option value="lastActivity">Last Activity</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <label class="form-label">&nbsp;</label>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-secondary" id="clearFiltersBtn">
+                                    <i class="fa-solid fa-times"></i>
+                                </button>
+                                <button class="btn btn-primary" id="applyFiltersBtn">
+                                    <i class="fa-solid fa-filter"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admins Table -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">Administrators List</h5>
+                    <div class="d-flex gap-2 d-none">
+                        <button class="btn btn-outline-primary btn-sm" id="exportAdminsBtn">
+                            <i class="fa-solid fa-download me-1"></i>Export
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" id="refreshAdminsBtn">
+                            <i class="fa-solid fa-refresh me-1"></i>Refresh
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" class="form-check-input" id="selectAllAdmins">
+                                    </th>
+                                    <th>Administrator</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Permissions</th>
+                                    <th>Last Activity</th>
+                                    <th>Created Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminsTableBody">
+                                <!-- Admins data will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="text-muted">
+                        Showing <span id="showingStart">0</span> to <span id="showingEnd">0</span> of <span id="totalAdmins">0</span> administrators
+                    </div>
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0" id="adminsPagination">
+                            <!-- Pagination will be populated here -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Actions Modal -->
+    <div class="modal fade zmodal" id="bulkActionsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bulk Actions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Select an action to perform on <span id="selectedAdminsCount">0</span> selected administrators:</p>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success" id="bulkActivateBtn">
+                            <i class="fa-solid fa-check me-2"></i>Activate Admins
+                        </button>
+                        <button class="btn btn-warning" id="bulkSuspendBtn">
+                            <i class="fa-solid fa-pause me-2"></i>Suspend Admins
+                        </button>
+                        <button class="btn btn-danger" id="bulkDeleteBtn">
+                            <i class="fa-solid fa-trash me-2"></i>Delete Admins
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Admin Modal -->
+    <div class="modal fade zmodal" id="adminModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adminModalTitle">Add New Administrator</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="adminForm">
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="adminName" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="adminEmail" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="adminPhone">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Status *</label>
+                                <select class="form-select" id="adminStatus" required>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="suspended">Suspended</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Password *</label>
+                                <input type="password" class="form-control" id="adminPassword" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Confirm Password *</label>
+                                <input type="password" class="form-control" id="adminPasswordConfirm" required>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="isSuperAdmin">
+                                    <label class="form-check-label" for="isSuperAdmin">
+                                        Super Administrator (Full system access and permissions)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12" id="permissionsSection">
+                                <label class="form-label">Permissions</label>
+                                <div class="row g-2">
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input permission-checkbox" type="checkbox" id="permUsers" value="users">
+                                            <label class="form-check-label" for="permUsers">
+                                                Manage Users
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input permission-checkbox" type="checkbox" id="permVendors" value="vendors">
+                                            <label class="form-check-label" for="permVendors">
+                                                Manage Vendors
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input permission-checkbox" type="checkbox" id="permProducts" value="products">
+                                            <label class="form-check-label" for="permProducts">
+                                                Manage Products
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input permission-checkbox" type="checkbox" id="permOrders" value="orders">
+                                            <label class="form-check-label" for="permOrders">
+                                                Manage Orders
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input permission-checkbox" type="checkbox" id="permReports" value="reports">
+                                            <label class="form-check-label" for="permReports">
+                                                View Reports
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input permission-checkbox" type="checkbox" id="permSettings" value="settings">
+                                            <label class="form-check-label" for="permSettings">
+                                                System Settings
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="saveAdminBtn">Save Administrator</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Details Modal -->
+    <div class="modal fade zmodal" id="adminDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Administrator Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="adminDetailsContent">
+                    <!-- Admin details will be populated here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Log Modal -->
+    <div class="modal fade zmodal" id="activityLogModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="activityLogModalTitle">Activity Log</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="activityLogContent">
+                    <!-- Activity log will be populated here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    table {
+        font-size: 0.875rem;
+    }
+
+    table th {
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-header .row {
+        flex-direction: column-reverse;
+    }
+
+    .card-header .row>div {
+        width: 100%;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-header .row>div button {
+        width: 100%;
+    }
+
+    .card-header .text-md-end {
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+}
+
+/* 
+            admin: [
+                { icon: "fa-regular fa-chart-bar", pageName: "Dashboard", fileName: "dashboard" },
+                { icon: "fa-solid fa-users", pageName: "Users Management", fileName: "users" },
+                { icon: "fa-solid fa-box", pageName: "Products", fileName: "products" },
+                { icon: "fa-solid fa-store", pageName: "Sellers", fileName: "sellers" },
+                { icon: "fa-solid fa-user-tie", pageName: "admins", fileName: "admin-settings" },
+                { icon: "fa-solid fa-user-tie", pageName: "test", fileName: "test" }
+            ], */

@@ -1,0 +1,87 @@
+<button class="btn btn-outline-light bg-light d-lg-none position-fixed top-50 start-0" style="z-index: 3" type="button"
+  data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+  <i class="fa-solid fa-angle-right text-black py-2"></i>
+</button>
+
+<!--  Sidebar / Offcanvas -->
+<div class="offcanvas overflow-auto w-50 offcanvas-start offcanvas-lg sidebar" tabindex="-1" id="sidebarMenu">
+  <div class="offcanvas-header">
+    <h5 class=" offcanvas-title">
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body ms-lg-auto">
+    <ul class="list-group sidebar-menu rounded-0 bg-black">
+      <!-- قسم أبل -->
+      <li class="list-group-item border-0">
+        <a class="fw-bold d-flex justify-content-between text-decoration-none text-dark" data-bs-toggle="collapse"
+          href="#appleProducts">
+          Apple’s Products <i class="fa-solid fa-angle-right rotate-icon"></i>
+        </a>
+        <div class="collapse" id="appleProducts">
+          <ul class="list-group list-group-flush ps-3">
+            <li class="list-group-item border-0">
+              <a onclick="productClik()" class="text-decoration-none text-dark">iPhones</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a onclick="productClik()" class="text-decoration-none text-dark">Smart Watches</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a onclick="productClik()" class="text-decoration-none text-dark">Laptops</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- قسم الصوتيات -->
+      <li class="list-group-item border-0">
+        <a class="fw-bold d-flex justify-content-between text-decoration-none text-dark" data-bs-toggle="collapse"
+          href="#audioProducts">
+          Audio Products <i class="fa-solid fa-angle-right rotate-icon"></i>
+        </a>
+        <div class="collapse" id="audioProducts">
+          <ul class="list-group list-group-flush ps-3">
+            <li class="list-group-item border-0">
+              <a onclick="productClik()" class="text-decoration-none text-dark">Boombox</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a onclick="productClik()" class="text-decoration-none text-dark">AirPods</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a onclick="productClik()" class="text-decoration-none text-dark">Headphones</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- أقسام ثابتة -->
+      <li class="list-group-item border-0 pt-lg-3">
+        <a onclick="productClik()" class="text-decoration-none text-dark">Phones</a>
+      </li>
+      <li class="list-group-item border-0">
+        <a onclick="productClik()" class="text-decoration-none text-dark">AirPods</a>
+      </li>
+      <li class="list-group-item border-0">
+        <a onclick="productClik()" class="text-decoration-none text-dark">Headphones</a>
+      </li>
+      <li class="list-group-item border-0">
+        <a onclick="productClik()" class="text-decoration-none text-dark">Labtops</a>
+      </li>
+      <li class="list-group-item border-0">
+        <a onclick="productClik()" class="text-decoration-none text-dark">Labtop Bags</a>
+      </li>
+      <li class="list-group-item border-0">
+        <a onclick="productClik()" class="text-decoration-none text-dark">Smart Watches</a>
+      </li>
+      <li class="list-group-item border-0">
+        <a onclick="productClik()" class="text-decoration-none text-dark">Camera</a>
+      </li>
+      <li class="list-group-item border-0">
+        <a onclick="productClik()" class="text-decoration-none text-dark">Monitors</a>
+      </li>
+      <li class="list-group-item border-0">
+        <a onclick="productClik()" class="text-decoration-none text-dark">Gamming</a>
+      </li>
+    </ul>
+  </div>
+</div>

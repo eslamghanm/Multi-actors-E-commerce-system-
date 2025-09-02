@@ -1,0 +1,71 @@
+<!-- Alert bar with dropdown -->
+<div class="alert bg-black text-light rounded-0 mb-0 py-2 text-center" role="alert">
+  <div class="w-100 text-center">
+    Summer Sale For All Swim Suits And Free Express Delivery - <strong>50% OFF</strong>! 
+  <a href="/customer/products/products.html" class="alert-link text-decoration-underline text-light">Shop Now</a>.
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand ps-3" href="/index.html"><img src="/assets/images/Logo.png" style="width: 2.5rem !important;" class="stormLogo"> <span class="fw-bold">Storm</span></a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Main nav -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      <!-- Center Links -->
+      <ul class="navbar-nav mx-auto mb-lg-0 text-center">
+        <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shared/components/contact/index.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shared/components/about/index.html">About</a></li>
+        <li id="loginBtn" class="nav-item"><a class="nav-link" href="/login/login.html">Sign In</a></li>
+      </ul>
+
+    
+
+      <!-- Icons -->
+    </div>
+    <div class="d-flex gap-2 pe-3 user-icons gap-0 ">
+      <div class=" position-relative">
+  <a class="text-light text-decoration-none w-100" >
+    <i class="fa-regular fa-heart auth fs-5 text-dark " id="WishList"></i>
+    <!-- Notification badge -->
+    <span id="wishCount" class="badge  rounded-pill bg-danger"></span>
+  </a>
+</div>
+      <div class=" position-relative">
+  <a class="text-light text-decoration-none w-100 " id="cartIcon">
+    <i class="fa-solid fa-cart-shopping fs-5 pe-1 text-dark WishList " id="navCartIcon"></i>
+    <!-- Notification badge -->
+    <span id="cartCount" class="badge  rounded-pill bg-danger"></span>
+  </a>
+</div>
+      <!-- <div class="">
+
+          <a class="text-light text-decoration-none w-100 position-relative" href="/customer/cart/index.html"><i class="fa-solid fa-cart-shopping fs-5 text-dark"></i>  <span class="position-absolute  translate-middle badge rounded-pill bg-danger d-flex align-items-center justify-content-center d-none" id="cartCount" style="top: -5px; right: -25px; width: 20px; height: 20px; ">0</span></a>
+
+
+      </div> -->
+      <div class="dropdown  " id="userMenu">
+      <a href="#" class="text-light text-decoration-none w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-regular fa-user fs-5 text-dark"></i></a>
+      <ul class=" dropdown-menu dropdown-menu-end blur-dark" aria-labelledby="dropdownMenuButton1">
+        <li id="My-Account" class="dropdown-item"><i class="fa-solid fa-user-gear fw-bold"></i> <small class="ps-2 fw-bold">Manage My Account</small></li>
+        <li class="dropdown-item"><a class="text-light text-decoration-none w-100" id="myOrders"><i class="fa-solid fa-cart-arrow-down fw-bold"></i> <small class="ps-2 fw-bold">My Orders</small></a></li>
+        <li class="dropdown-item"><a class="text-light text-decoration-none w-100" id="WishList"><i class="fa-solid fa-heart auth fw-bold"></i> <small class="ps-2 fw-bold"> My WishList</small></a></li>
+        <li id="Logout" class="dropdown-item"><i class="fa-solid fa-arrow-right-from-bracket fw-bold"></i> <small class="ps-2 fw-bold">Logout</small></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+          

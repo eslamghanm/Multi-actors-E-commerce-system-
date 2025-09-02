@@ -1,0 +1,56 @@
+/* Global Reset */
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/* Webkit Browsers (Chrome, Edge, Safari) */
+*::-webkit-scrollbar {
+  width: 10px;     /* width of vertical scrollbar */
+  height: 10px;    /* height of horizontal scrollbar */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--text-color);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--background-color);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-button {
+  background-color: var(--success-hover);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: var(--success-color);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin; /* auto | thin | none */
+  scrollbar-color: var(--danger-color) var(--background-color);
+}
+
+:root {
+  --text-color: #c3c3c3;
+  --danger-color: rgb(220 53 69);
+  --success-color: #00ff66;
+  --success-hover: #00aa00;
+  --background-color: #f8f9fa;
+}
+
+
+/* Dark Mode (if device is in dark theme) */
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: white;
+  }
+} */

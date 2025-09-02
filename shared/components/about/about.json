@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Tom Cruise",
+    "job": "Founder & Chairman",
+    "img": "/assets/images/about/p1.png",
+    "icons": [
+      "fa-brands fa-twitter",
+      "fa-brands fa-instagram",
+      "fa-brands fa-linkedin"
+    ]
+  },
+  {
+    "name": "Emma Watson",
+    "job": "Managing Director",
+    "img": "/assets/images/about/p2.png",
+    "icons": [
+      "fa-brands fa-twitter",
+      "fa-brands fa-instagram",
+      "fa-brands fa-linkedin"
+    ]
+  },
+  {
+    "name": "Will Smith",
+    "job": "Product Designer",
+    "img": "/assets/images/about/p3.png",
+    "icons": [
+      "fa-brands fa-twitter",
+      "fa-brands fa-instagram",
+      "fa-brands fa-linkedin"
+    ]
+  },
+  {
+    "name": "Tom Cruise",
+    "job": "Founder & Chairman",
+    "img": "/assets/images/about/p1.png",
+    "icons": [
+      "fa-brands fa-twitter",
+      "fa-brands fa-instagram",
+      "fa-brands fa-linkedin"
+    ]
+  },
+  {
+    "name": "Emma Watson",
+    "job": "Managing Director",
+    "img": "/assets/images/about/p2.png",
+    "icons": [
+      "fa-brands fa-twitter",
+      "fa-brands fa-instagram",
+      "fa-brands fa-linkedin"
+    ]
+  },
+  {
+    "name": "Will Smith",
+    "job": "Product Designer",
+    "img": "/assets/images/about/p3.png",
+    "icons": [
+      "fa-brands fa-twitter",
+      "fa-brands fa-instagram",
+      "fa-brands fa-linkedin"
+    ]
+  }
+]

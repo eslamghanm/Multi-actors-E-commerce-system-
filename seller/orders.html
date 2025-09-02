@@ -1,0 +1,65 @@
+<div class="container-fluid py-4">
+    <div id="alertContainer" class="position-fixed top-20 end-0 p-3" style="z-index: 1080;"></div>
+
+    <div class="card main-card">
+        <div class="card-header table-header py-3">
+            <div class="row align-items-center g-3">
+                <div class="col text-md-end">
+                    <div class="input-group filter-container" style="max-width: 300px; margin-left: auto;">
+                        <span class="input-group-text">
+                            <i class="fas fa-filter"></i>
+                        </span>
+                        <select id="ordersFilter" class="form-select">
+                            <option value="">All Statuses</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Processing">Processing</option>
+                            <option value="Shipped">Shipped</option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0" id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th width="120">Order ID</th>
+                            <th>Customer</th>
+                            <th width="150">Date</th>
+                            <th width="120">Total Items</th>
+                            <th width="120">Total</th>
+                            <th width="150">Status</th>
+                            <th width="120" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic content will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Order Details -->
+<div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderDetailsTitle">Order Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="orderDetailsBody">
+                <!-- Order details will be injected here via JS -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="printInvoiceBtn">Print Invoice</button>
+            </div>
+        </div>
+    </div>
+</div>

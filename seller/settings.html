@@ -1,0 +1,77 @@
+<div class="container py-4">
+    <div class="card settings-card">
+        <div class="card-header">
+            <i class="fas fa-cog"></i> Store Settings
+        </div>
+        <div class="card-body">
+            <form id="settingsForm" novalidate>
+                <!-- Basic Info -->
+                <div class="mb-3">
+                    <label for="storeName" class="form-label">Store Name</label>
+                    <input type="text" class="form-control" id="storeName" required>
+                    <div class="invalid-feedback">Store name is required.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="sellerName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="sellerName" required>
+                    <div class="invalid-feedback">Full name is required.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="sellerEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="sellerEmail" required>
+                    <div class="invalid-feedback">Enter a valid email.</div>
+                </div>
+
+                <!-- Address -->
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="governorate" class="form-label">Governorate</label>
+                        <input type="text" class="form-control" id="governorate" required>
+                        <div class="invalid-feedback">Governorate is required.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" required>
+                        <div class="invalid-feedback">City is required.</div>
+                    </div>
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label for="street" class="form-label">Street</label>
+                    <input type="text" class="form-control" id="street" required>
+                    <div class="invalid-feedback">Street is required.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="zipCode" class="form-label">Zip Code</label>
+                    <input type="text" class="form-control" id="zipCode" required pattern="\d{5}">
+                    <div class="invalid-feedback">Enter a valid 5-digit Zip Code.</div>
+                </div>
+
+                <!-- Change Password -->
+                <h5 class="mt-4">Change Password</h5>
+                <div class="mb-3">
+                    <label for="oldPassword" class="form-label">Old Password</label>
+                    <input type="password" class="form-control" id="oldPassword">
+                    <div class="invalid-feedback">Old password is incorrect.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="newPassword" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="newPassword" minlength="6">
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                    <input type="password" class="form-control" id="confirmPassword">
+                    <div class="invalid-feedback">Passwords must match.</div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex gap-2">
+                    <button type="button" id="saveBtn" class="btn btn-primary" disabled>Save Changes</button>
+                    <button type="button" id="cancelBtn" class="btn btn-secondary" disabled>Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,218 @@
+<div class="container-fluid py-4">
+    <div id="alertContainer" class="position-fixed top-20 end-0 p-3" style="z-index: 1080;"></div>
+
+    <!-- Statistics Cards Row -->
+    <div class="row stats-row g-4 mb-4" id="statsRow">
+        <!-- Card 1 - Total Sales -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card blue-gradient">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="badge bg-success" id="salesTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalSales">$0</div>
+                        <div class="stat-label">Total Sales</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 - Total Orders -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="badge bg-success" id="ordersTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalOrders">0</div>
+                        <div class="stat-label">Total Orders</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 - Total Products -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                        <span class="badge bg-success" id="productsTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalProducts">0</div>
+                        <div class="stat-label">Total Products</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 - Top Product -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card blue-gradient">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-ranking-star"></i>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="topProduct">No Product</div>
+                        <div class="stat-label">Top Product</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 - Total Customers -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-users"></i>
+                        <span class="badge bg-success" id="customersTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalCustomers">0</div>
+                        <div class="stat-label">Total Customers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 - Current Month Earnings -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <span class="badge bg-success" id="revenueTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="currentMonthEarnings">$0</div>
+                        <div class="stat-label">C. M. E.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7 - Year-to-Date Earnings -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <span class="badge bg-success" id="revenueTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="yearToDateEarnings">$0</div>
+                        <div class="stat-label">Y. D. E.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8 - Revenue -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card blue-gradient">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <span class="badge bg-success" id="revenueTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="revenue">$0</div>
+                        <div class="stat-label">Revenue</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 9 - Avg. Order Value -->
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-6">
+            <div class="stat-box">
+                <div class="card blue-gradient">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-receipt"></i>
+                        <span class="badge bg-success" id="aovTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="avgOrderValue">$0</div>
+                        <div class="stat-label">Avg. Order Value</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 10 - Inventory Value -->
+        <div class="col-12 col-sm-6 col-lg-12 col-xl-6">
+            <div class="stat-box">
+                <div class="card blue-gradient">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-warehouse"></i>
+                        <span class="badge bg-success" id="aovTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="inventoryValue">$0</div>
+                        <div class="stat-label">Inventory Value</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="row charts-row g-4">
+        <!-- Main Chart -->
+        <div class="col-12 col-lg-8">
+            <div class="card chart-card">
+                <div class="card-header bg-transparent border-bottom">
+                    <h5 class="card-title mb-0">Sales Overview</h5>
+                    <div class="chart-period">
+                        <select class="form-select form-select-sm" id="salesPeriod">
+                            <option value="year">Year</option>
+                            <option value="month" selected>Month</option>
+                            <option value="week">Week</option>
+                            <option value="day">Day</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <canvas id="salesChart" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="col-12 col-lg-4">
+            <div class="card chart-card">
+                <div class="card-header bg-transparent border-bottom">
+                    <h5 class="card-title mb-0">Sales by Category</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="categoryChart" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

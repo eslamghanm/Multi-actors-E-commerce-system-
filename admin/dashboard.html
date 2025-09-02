@@ -1,0 +1,246 @@
+<div class="container-fluid py-4">
+    <div id="alertContainer" class="position-fixed top-20 end-0 p-3" style="z-index: 1080;"></div>
+
+    <!-- Statistics Cards Row -->
+    <div class="row stats-row g-4 mb-4" id="statsRow">
+        <!-- Card 1 - Total Users -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card blue-gradient">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-users"></i>
+                        <span class="badge bg-success" id="usersTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalUsers">0</div>
+                        <div class="stat-label">Total Users</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 - Total Sellers -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-store"></i>
+                        <span class="badge bg-success" id="sellersTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalSellers">0</div>
+                        <div class="stat-label">Total Sellers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 - Total Customers -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-user-group"></i>
+                        <span class="badge bg-success" id="customersTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalCustomers">0</div>
+                        <div class="stat-label">Total Customers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 - Total Admins -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card blue-gradient">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalAdmins">0</div>
+                        <div class="stat-label">Total Admins</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 - Total Products -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                        <span class="badge bg-success" id="productsTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalProducts">0</div>
+                        <div class="stat-label">Total Products</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 - Total Orders -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="badge bg-success" id="ordersTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalOrders">0</div>
+                        <div class="stat-label">Total Orders</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7 - Total Revenue -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <span class="badge bg-success" id="revenueTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="totalRevenue">$0</div>
+                        <div class="stat-label">Total Revenue</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8 - Active Users -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="stat-box">
+                <div class="card blue-gradient">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-user-check"></i>
+                        <span class="badge bg-success" id="activeUsersTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="activeUsers">0</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 9 - Pending Orders -->
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-6">
+            <div class="stat-box">
+                <div class="card blue-gradient">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-clock"></i>
+                        <span class="badge bg-warning" id="pendingOrdersTrend">
+                            +0%
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="pendingOrders">0</div>
+                        <div class="stat-label">Pending Orders</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 10 - System Health -->
+        <div class="col-12 col-sm-6 col-lg-12 col-xl-6">
+            <div class="stat-box">
+                <div class="card blue-gradient">
+                    <div class="card-header bg-transparent">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <span class="badge bg-success" id="systemHealthTrend">
+                            Excellent
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-value" id="systemHealth">98.5%</div>
+                        <div class="stat-label">System Health</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="row charts-row g-4">
+        <!-- Main Chart -->
+        <div class="col-12 col-lg-8">
+            <div class="card chart-card">
+                <div class="card-header bg-transparent border-bottom">
+                    <h5 class="card-title mb-0">System Overview</h5>
+                    <div class="chart-period">
+                        <select class="form-select form-select-sm" id="systemPeriod">
+                            <option value="year">Year</option>
+                            <option value="month" selected>Month</option>
+                            <option value="week">Week</option>
+                            <option value="day">Day</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <canvas id="systemChart" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="col-12 col-lg-4">
+            <div class="card chart-card">
+                <div class="card-header bg-transparent border-bottom">
+                    <h5 class="card-title mb-0">Users Distribution</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="usersChart" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-transparent border-bottom">
+                    <h5 class="card-title mb-0">Recent Activity</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>User</th>
+                                    <th>Action</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentActivityTable">
+                                <!-- Activity data will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

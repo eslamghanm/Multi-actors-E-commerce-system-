@@ -1,0 +1,323 @@
+<div class="container-fluid py-4">
+    <div id="alertContainer" class="position-fixed top-20 end-0 p-3" style="z-index: 99999999;"></div>
+
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-end align-items-center">
+                <button class="btn btn-primary" id="addVendorBtn">
+                    <i class="fa-solid fa-plus me-2"></i>Add New Vendor
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row g-4 mb-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-card-body">
+                    <div class="stat-icon bg-primary">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="totalVendorsCount">0</h3>
+                        <p class="stat-label">Total Vendors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-card-body">
+                    <div class="stat-icon bg-success">
+                        <i class="fa-solid fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="activeVendorsCount">0</h3>
+                        <p class="stat-label">Active Vendors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-card-body">
+                    <div class="stat-icon bg-warning">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="pendingVendorsCount">0</h3>
+                        <p class="stat-label">Pending Approval</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-card-body">
+                    <div class="stat-icon bg-info">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="mainVendorsCount">0</h3>
+                        <p class="stat-label">Main Vendors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters and Search -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-4">
+                            <label class="form-label">Search Vendors</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-search"></i>
+                                </span>
+                                <input type="text" class="form-control" id="searchInput" placeholder="Search by name, email, or city...">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <label class="form-label">Status</label>
+                            <select class="form-select" id="statusFilter">
+                                <option value="">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="pending">Pending</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <label class="form-label">City</label>
+                            <select class="form-select" id="cityFilter">
+                                <option value="">All Cities</option>
+                                <!-- Cities will be populated dynamically -->
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <label class="form-label">Sort By</label>
+                            <select class="form-select" id="sortBy">
+                                <option value="name">Name</option>
+                                <option value="email">Email</option>
+                                <option value="city">City</option>
+                                <option value="createdAt">Created Date</option>
+                                <option value="status">Status</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <label class="form-label">&nbsp;</label>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-secondary" id="clearFiltersBtn">
+                                    <i class="fa-solid fa-times"></i>
+                                </button>
+                                <button class="btn btn-primary" id="applyFiltersBtn">
+                                    <i class="fa-solid fa-filter"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendors Table -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">Vendors List</h5>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary btn-sm d-none" id="exportVendorsBtn">
+                            <i class="fa-solid fa-download me-1"></i>Export
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" id="refreshVendorsBtn">
+                            <i class="fa-solid fa-refresh me-1"></i>Refresh
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0 d-none d-md-table">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" class="form-check-input" id="selectAllVendors">
+                                        </th>
+                                        <th>Vendor</th>
+                                        <th>Location</th>
+                                        <th>Status</th>
+                                        <th>Type</th>
+                                        <th>Products</th>
+                                        <th>Joined Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="vendorsTableBodyDesktop">
+                                    <!-- Vendors data will be populated here for desktop -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="vendors-list-mobile d-md-none" id="vendorsTableBodyMobile">
+                            <!-- Vendors data will be populated here for mobile -->
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="text-muted">
+                        Showing <span id="showingStart">0</span> to <span id="showingEnd">0</span> of <span id="totalVendors">0</span> vendors
+                    </div>
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0" id="vendorsPagination">
+                            <!-- Pagination will be populated here -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Actions Modal -->
+    <div class="modal fade zmodal" id="bulkActionsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bulk Actions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Select an action to perform on <span id="selectedVendorsCount">0</span> selected vendors:</p>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success" id="bulkApproveBtn">
+                            <i class="fa-solid fa-check me-2"></i>Approve Vendors
+                        </button>
+                        <button class="btn btn-warning" id="bulkSuspendBtn">
+                            <i class="fa-solid fa-pause me-2"></i>Suspend Vendors
+                        </button>
+                        <button class="btn btn-danger" id="bulkDeleteBtn">
+                            <i class="fa-solid fa-trash me-2"></i>Delete Vendors
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Vendor Modal -->
+    <div class="modal fade zmodal" id="vendorModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="vendorModalTitle">Add New Vendor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="vendorForm">
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Vendor Name *</label>
+                                <input type="text" class="form-control" id="vendorName" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="vendorEmail" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="vendorPhone">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Status *</label>
+                                <select class="form-select" id="vendorStatus" required>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="pending">Pending</option>
+                                    
+                                    
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label">City *</label>
+                                <input type="text" class="form-control" id="vendorCity" required>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label">Street</label>
+                                <input type="text" class="form-control" id="vendorStreet">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label">Zip Code</label>
+                                <input type="text" class="form-control" id="vendorZipCode">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Business Description</label>
+                                <textarea class="form-control" id="vendorDescription" rows="3" placeholder="Describe the vendor's business..."></textarea>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Password *</label>
+                                <input type="password" class="form-control" id="vendorPassword" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Confirm Password *</label>
+                                <input type="password" class="form-control" id="vendorPasswordConfirm" required>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="isMainVendor">
+                                    <label class="form-check-label" for="isMainVendor">
+                                        Main Vendor (Featured vendor with special privileges)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="saveVendorBtn">Save Vendor</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Details Modal -->
+    <div class="modal fade zmodal" id="vendorDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Vendor Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="vendorDetailsContent">
+                    <!-- Vendor details will be populated here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Products Modal -->
+    <div class="modal fade zmodal" id="vendorProductsModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="vendorProductsModalTitle">Vendor Products</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="vendorProductsContent">
+                    <!-- Vendor products will be populated here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

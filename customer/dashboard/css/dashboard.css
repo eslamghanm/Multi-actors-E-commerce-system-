@@ -1,0 +1,156 @@
+:root{
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --info-color: #0dcaf0;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+}
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+    }
+    .sidebar {
+      min-height: 100vh;
+      background-color: #ffffff !important;
+      border-right: 1px solid #dee2e6;
+    }
+    .sidebar .nav-link {
+      color: #333;
+      font-weight: 500;
+    }
+  .active  a{
+     color: var(--danger-color) !important;
+}
+    .card {
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .card h5 {
+      font-weight: 600;
+    }
+    main{
+      border-radius: 1rem;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.05) , -2px -2px 6px rgba(0,0,0,0.05);
+      
+      height: fit-content;
+      min-height: 100vh;
+    
+      background-color: white;
+      -webkit-border-radius: 1rem;
+      -moz-border-radius: 1rem;
+      -ms-border-radius: 1rem;
+      -o-border-radius: 1rem;
+}
+main h4{
+  font-weight: 400;
+  font-size: large;
+}
+/* Sidebar inside container only */
+.sidebar {
+  width: 200px !important;              
+  max-width: 100%;                            
+  max-height: 100%;         
+  overflow-y: auto;          
+  border-right: 1px solid #ddd;
+}
+#sidebarToggle:focus {
+  outline: none;
+}
+#sidebarToggle{
+  width: fit-content;
+}
+.nav-link:hover{
+color: #dc3545;
+}
+#wishlistCard{
+
+  img {
+  width: 100!important;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  transition:all .5s ease ;
+  -webkit-transition:all .5s ease ;
+  -moz-transition:all .5s ease ;
+  -ms-transition:all .5s ease ;
+  -o-transition:all .5s ease ;
+}
+transition: .5s all ease;
+-webkit-transition: .5s all ease;
+-moz-transition: .5s all ease;
+-ms-transition: .5s all ease;
+-o-transition: .5s all ease;
+img:hover{ transform: scale(.9); -webkit-transform: scale(.9); -moz-transform: scale(.9); -ms-transform: scale(.9); -o-transform: scale(.9);
+}
+}
+#wishlistCard:hover{
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .sidebar {
+ position: absolute;
+
+    top: 0;
+    left: -100%;
+    z-index: 2;
+    overflow-y: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    transition: left .6s ease;
+    width: 50% !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    height: 100% !important;
+    -webkit-transition: left .6s ease;
+    -moz-transition: left .6s ease;
+    -ms-transition: left .6s ease;
+    -o-transition: left .6s ease;
+}
+  main{
+    width: 100%;
+    padding: 1rem;
+   
+  }
+}
+.open {
+  left: 0;
+}
+#sidebarToggle{
+  transition: all .6s ease;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  -o-transition: all .6s ease;
+}
+#sidebarClose{
+  cursor: pointer;
+  transition: all .6s ease;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  -o-transition: all .6s ease;
+}
+#sidebarClose:hover{
+  color: var(--danger-color);
+}
+nav a{
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: all .6s ease;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  -o-transition: all .6s ease;
+}
+nav a:hover{
+  color: var(--danger-color)!important;
+
+}

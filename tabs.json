@@ -1,0 +1,24 @@
+{ 
+  "seller": [
+    {
+      "icon": "fa-regular fa-chart-bar",
+      "pageName": "Dashboard",
+      "fileName": "dashboard"
+    },
+    {
+      "icon": "fa-solid fa-box",
+      "pageName": "Products",
+      "fileName": "products"
+    },
+    {
+      "icon": "fa-solid fa-cart-shopping",
+      "pageName": "Orders",
+      "fileName": "orders"
+    },
+    {
+      "icon": "fa-solid fa-gear",
+      "pageName": "Settings",
+      "fileName": "settings"
+    }
+  ]
+}

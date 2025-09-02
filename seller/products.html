@@ -1,0 +1,226 @@
+<div class="container-fluid py-4">
+
+    <div id="alertContainer" class="position-fixed top-20 end-0 p-3" style="z-index: 1080;"></div>
+
+
+    <div class="card main-card">
+
+        <div class="card-header table-header py-3">
+            <div class="row align-items-center g-3">
+                <div class="col-md-6 col-xl-4">
+                    <div class="input-group filter-container">
+                        <span class="input-group-text">
+                            <i class="fas fa-filter"></i>
+                        </span>
+                        <select id="categoriesFilter" class="form-select">
+                            <option value="">All Categories</option>
+                            <option value="Computers">Computers</option>
+                            <option value="Computer Components">Computer Components</option>
+                            <option value="Computer Accessories">Computer Accessories</option>
+                            <option value="Phones">Phones</option>
+                            <option value="Phone Accessories">Phone Accessories</option>
+                            <option value="Tablets">Tablets</option>
+                            <option value="Networking">Networking</option>
+                            <option value="Smart Home">Smart Home</option>
+                            <option value="Wearables">Wearables</option>
+                            <option value="Gaming">Gaming</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-8 text-md-end">
+                    <button class="btn btn-primary" id="addProductBtn" data-bs-toggle="modal"
+                        data-bs-target="#productModal">
+                        <i class="fa-solid fa-plus"></i>Add Product
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-body p-0">
+            <div>
+                <table class="table table-hover align-middle mb-0" id="productsTable">
+                    <thead>
+                        <tr>
+                            <th width="50">#</th>
+                            <th width="120">ID</th>
+                            <th>Product Name</th>
+                            <th width="150">Category</th>
+                            <th width="100">Price</th>
+                            <th width="100">Offer</th>
+                            <th width="140">Final Price</th>
+                            <th width="100">Stock</th>
+                            <th width="120">Status</th>
+                            <th width="150" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="productModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            <form id="productForm" novalidate class="needs-validation">
+
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="productModalLabel">
+                        <i class="fas fa-cube me-2"></i>
+                        <span id="modalTitle">Add New Product</span>
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="form-section">
+                        <div class="form-section-title">
+                            <i class="fas fa-images"></i> Product Images
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputImages" class="btn btn-primary w-100">
+                                <i class="fas fa-image"></i> Upload Photos
+                            </label>
+                            <input type="file" id="inputImages" style="display: none; width: 100%;" multiple
+                                accept="image/*">
+                            <div class="d-flex justify-content-between mt-1">
+                                <small id="imageCounter" class="text-muted">0/5 images selected</small>
+                                <small class="text-muted">Max 5 images (2MB each)</small>
+                                <button type="button" class="btn btn-sm btn-outline-danger btn-clear-images"
+                                    style="display: none;">
+                                    <i class="fas fa-trash-alt me-1"></i> Clear All
+                                </button>
+                            </div>
+                            <div id="imagePreview" class="d-flex flex-wrap gap-3 mt-3"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title">
+                            <i class="fas fa-info-circle"></i> Basic Information
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-12 d-none">
+                                <label for="productId" class="form-label fw-semibold">Product ID <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="product Id Added Dynamicaly"
+                                    readonly id="productId">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="productName" class="form-label fw-semibold">Product Name <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="productName"
+                                    placeholder="Enter product name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="category" class="form-label fw-semibold">Category <span
+                                        class="text-danger">*</span></label>
+                                <select class="form-select" id="category" required>
+                                    <option value="" selected disabled>Choose category</option>
+                                    <option value="Computers">Computers</option>
+                                    <option value="Computer Components">Computer Components</option>
+                                    <option value="Computer Accessories">Computer Accessories</option>
+                                    <option value="Phones">Phones</option>
+                                    <option value="Phone Accessories">Phone Accessories</option>
+                                    <option value="Tablets">Tablets</option>
+                                    <option value="Networking">Networking</option>
+                                    <option value="Smart Home">Smart Home</option>
+                                    <option value="Wearables">Wearables</option>
+                                    <option value="Gaming">Gaming</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="productDesc" class="form-label fw-semibold">Description</label>
+                                <textarea class="form-control" id="productDesc" rows="3"
+                                    placeholder="Enter product description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-section">
+                        <div class="form-section-title">
+                            <i class="fas fa-tags"></i> Pricing & Inventory
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="price" class="form-label fw-semibold">Price ($) <span
+                                        class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="price" step="0.01" min="0"
+                                        max="500000" placeholder="0.00" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="offer" class="form-label fw-semibold">Discount (%)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">%</span>
+                                    <input type="number" class="form-control" id="offer" min="0" max="100"
+                                        placeholder="0">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="stock" class="form-label fw-semibold">Stock <span
+                                        class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="stock" min="0" max="1000" placeholder="0"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="status" class="form-label fw-semibold">Status</label>
+                                <input type="text" class="form-control" id="status"
+                                    placeholder="product Status Added Dynamicaly" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal-footer bg-light">
+                    <button type="reset" class="btn btn-outline-secondary px-4 rounded-pill">
+                        <i class="fas fa-undo me-2"></i>Reset
+                    </button>
+                    <button type="submit" class="btn btn-primary px-4 rounded-pill" id="saveBtn">
+                        <i class="fas fa-save me-2"></i>Save Product
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-exclamation-triangle me-2"></i>Confirm Deletion
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="text-center mb-4">
+                    <i class="fas fa-trash-alt text-danger" style="font-size: 3rem;"></i>
+                </div>
+                <p class="text-center fs-5 mb-2">Are you sure you want to delete this product?</p>
+                <p class="text-muted text-center small">This action cannot be undone and all product data will be
+                    permanently removed.</p>
+            </div>
+            <div class="modal-footer bg-light justify-content-center">
+                <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">
+                    <i class="fas fa-times me-2"></i>Cancel
+                </button>
+                <button type="button" class="btn btn-danger px-4 rounded-pill" id="confirmDeleteBtn">
+                    <i class="fas fa-trash-alt me-2"></i>Delete Product
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

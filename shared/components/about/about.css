@@ -1,0 +1,43 @@
+:root{
+     --text-color: #c3c3c3;
+       --danger-color: rgb(220 53 69);
+}
+.text-gray{
+    color: var( --text-color);
+    transition: all .5s;
+}
+.text-gray:hover{
+    color: var( --danger-color);
+    text-decoration: underline !important;
+}
+.markect-item{
+    transition: all 1s ease ;
+}
+.markect-item:hover{
+    background-color: var(--danger-color);
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1,1.1);
+}
+.markect-item div i{
+     transition: all 1s ease ;
+     font-size: 1.5rem !important;
+}
+.markect-item:hover div i{
+    background-color: white !important;
+    color: black !important;
+    border-color: rgba(0, 0, 0, .1);
+}
+.swiper {
+  width: 100%;
+  padding: .5rem 0;
+  overflow: hidden;
+}
+.swiper-wrapper {
+  display: flex; /* هذا هو المهم لعرض الشرائح بشكل أفقي */
+}
+.swiper-slide {
+  width: auto;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
